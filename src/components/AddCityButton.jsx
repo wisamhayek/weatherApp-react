@@ -18,7 +18,9 @@ const AddCityButton = (props) => {
             context.addCity(name, response.data.main.temp, response.data.weather[0].description, response.data.main.feels_like, response.data.wind.speed, response.data.weather[0].icon);
             setName('');
         }).catch((error) => {
-            console.log(error);
+          alert("City not found, Please try again.")
+          console.log(error);
+          setName('');
         })
         }
 
