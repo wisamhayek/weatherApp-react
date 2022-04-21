@@ -18,7 +18,7 @@ const CardCity = (props) => {
         <CardMedia
           component="img"
           height="150"
-          image={`http://openweathermap.org/img/wn/${city.imgIcon}@2x.png`}
+          image={`https://openweathermap.org/img/wn/${city.imgIcon}@2x.png`}
           alt={city.name}
         />
         <CardContent>
