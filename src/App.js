@@ -11,14 +11,22 @@ function App() {
       setCities(prevCities => [...prevCities, { name, temperature,description,feelsLike, WindSpeed, imgIcon}]);
     };
 
+    const [theme, setTheme] = useState('light');
+    const themeToggler = () => {
+      theme === 'light' ? setTheme('dark') : setTheme('light')
+    }
+
     return (
-      <WeatherContext.Provider value={{cities,addCity}}>
-        <div className="city-overview">
+      <div className={`${theme}`}>
+      <WeatherContext.Provider  value={{cities,addCity}}>
+        <div className={`city-overview`}>
           <h2>Weather App</h2>
+          <button className="themeButton" onClick={themeToggler}>Switch Theme</button>
           <AddCityButton />
           {cities != null && <CardCity data={cities}/> }
         </div>
       </WeatherContext.Provider>
+      </div>
     );
   }
   

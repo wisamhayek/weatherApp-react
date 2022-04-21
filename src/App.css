@@ -18,44 +18,61 @@
   width: fit-content;
 }
 .city-overview {
-    display: grid;
-    gap: 1em;
-    padding: 2em;
-    justify-content: center;
-    margin-top: 2rem;
-    background: #f7f7f7;
-    box-shadow: 0px 2px 5px 1px #7777;
-  }
+  display: grid;
+  gap: 1em;
+  padding: 2em;
+  /* justify-content: center; */
+  margin-top: 2rem;
+  background: #f7f7f7;
+  box-shadow: 0px 2px 5px 1px #7777;
+}
   
-  .city-overview h2 {
-    margin-top: 0;
-    color:dodgerblue;
-  }
-  
-  
-  .city-overview .add-city-form {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2em;
-  }
+.city-overview h2 {
+  margin-top: 0;
+  color:dodgerblue;
+}
 
-  @media only screen and (max-width: 768px) {
-    /* For mobile phones: */
-     .mainApp{
-      width: 100%;
-      grid-template-columns: 1fr;
-    }
-    .city-overview{
-      margin-top: 0;
-    }
-    .add-city-form{
-      width: 95%;
-      column-gap: 1rem;
-    }
-    .inputCity{
-      width: 12rem;
-    }
-    .submitButton{
-      width: 5rem;
-    }
+
+.city-overview .add-city-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2em;
+}
+
+.light{
+  background-color: #f7f7f7;
+}
+.dark {
+  background-color: rgb(29, 27, 27);
+}
+.dark .city-overview{
+  background-color: rgb(66, 63, 63);
+}
+
+.themeButton{
+  width: fit-content;
+  margin: auto;
+  background-color: black;
+  color: white;
+  font-size: large;
+}
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+    .mainApp{
+    width: 100%;
+    grid-template-columns: 1fr;
   }
+  .city-overview{
+    margin-top: 0;
+  }
+  .add-city-form{
+    width: 95%;
+    column-gap: 1rem;
+  }
+  .inputCity{
+    width: 12rem;
+  }
+  .submitButton{
+    width: 5rem;
+  }
+}
