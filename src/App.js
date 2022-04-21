@@ -1,25 +1,25 @@
-import logo from './logo.svg';
 import './App.css';
+import { useState } from 'react';
+import WeatherContext from './context/WeatherContext';
+import AddCityButton from './components/AddCityButton';
+import CardCity from './components/CardCity';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+    const [cities, setCities] = useState([]);
 
-export default App;
+    const addCity = (name, temperature,description,feelsLike, WindSpeed, imgIcon) => {
+      setCities(prevCities => [...prevCities, { name, temperature,description,feelsLike, WindSpeed, imgIcon}]);
+    };
+
+    return (
+      <WeatherContext.Provider value={{cities,addCity}}>
+        <div className="city-overview">
+          <h2>Weather App</h2>
+          <AddCityButton />
+          {cities != null && <CardCity data={cities}/> }
+        </div>
+      </WeatherContext.Provider>
+    );
+  }
+  
+  export default App;
